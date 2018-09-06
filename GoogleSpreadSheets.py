@@ -1,5 +1,6 @@
 import gspread
 import pokebase as pb
+from random import randint
 from oauth2client.service_account import ServiceAccountCredentials
 
 class GoogleSpreadSheet:
@@ -301,7 +302,10 @@ class GoogleSpreadSheet:
         raise NotImplementedError
 
     def _NatureGenerator(self):
-        raise NotImplementedError
+
+        rnjesus = randint(1,25)
+        nature = pb.nature(rnjesus)
+        print(nature)
 
     def _Roll_Encounter_Generator(self, route, encounter_table):
         raise NotImplementedError
@@ -309,8 +313,10 @@ class GoogleSpreadSheet:
 if __name__ == "__main__":
     GSS = GoogleSpreadSheet()
     json_data = GSS._get_jsonized_output()
-    alex_pokemon_data = GSS.get_Alex_Pokemon_Information(json_data)
-    brenna_pokemon_data = GSS.get_Brenna_Pokemon_Information(json_data)
-    brie_pokemon_data = GSS.get_Bri_Pokemon_Information(json_data)
-    morgan_pokemon_data = GSS.get_Morgan_Pokemon_Information(json_data)
-    shana_pokemon_data = GSS.get_Shana_Pokemon_Information(json_data)
+    while(1):
+        alex_pokemon_data = GSS.get_Alex_Pokemon_Information(json_data)
+        brenna_pokemon_data = GSS.get_Brenna_Pokemon_Information(json_data)
+        brie_pokemon_data = GSS.get_Bri_Pokemon_Information(json_data)
+        morgan_pokemon_data = GSS.get_Morgan_Pokemon_Information(json_data)
+        shana_pokemon_data = GSS.get_Shana_Pokemon_Information(json_data)
+    # GSS._NatureGenerator()
