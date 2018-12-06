@@ -6,7 +6,9 @@ from oauth2client.service_account import ServiceAccountCredentials
 class GoogleSpreadSheet:
 
     def __init__(self):
-
+        
+        """ This was for fun, if I had to make a commit for work. I need to make base classes to update players. """
+        
         """Make sure to enable google api from the google cloud drive!"""
 
         self.scope      = ['https://spreadsheets.google.com/feeds',
